@@ -12,10 +12,10 @@ Utilizando os dados do arquivo “DEINFO_AB_FEIRASLIVRES_2014.csv”, implemente
 * exclusão de uma feira através de seu código de registro;
 * alteração dos campos cadastrados de uma feira, exceto seu código de registro;
 * busca de feiras utilizando ao menos um dos parâmetros abaixo:
- * distrito
- * regiao5
- * nome_feira
- * bairro
+  * distrito
+  * regiao5
+  * nome_feira
+  * bairro
 
 ## Rodando o app
 
@@ -25,7 +25,7 @@ Será necessário o Docker e Docker Compose.
 Na primeira vez, pode ser necessário dar permissão de execução para o entrypoint. Também poderá demorar um pouco por conta do primeiro build.
 
 ```
-chmod +x .docker/entrypoint.sh
+$ chmod +x .docker/entrypoint.sh
 $ docker-compose up
 ```
 
@@ -63,7 +63,7 @@ $ docker exec -it mb-backend python manage.py import --file .data/DEINFO_AB_FEIR
 }
 ```
 
-(.data/imgs/create.png)
+![Screenshot](.data/imgs/create.png)
 
 ### Listando Feiras
 
@@ -77,7 +77,7 @@ $ docker exec -it mb-backend python manage.py import --file .data/DEINFO_AB_FEIR
 
 Exemplo de uso dos parâmetros: `http://localhost:8000/v1/fair/?distrito=VILA`
 
-(.data/imgs/list.png)
+![Screenshot](.data/imgs/list.png)
 
 ### Alterando campos
 
@@ -100,11 +100,11 @@ Exemplo de uso dos parâmetros: `http://localhost:8000/v1/fair/?distrito=VILA`
 }
 ```
 
-(.data/imgs/update.png)
+![Screenshot](.data/imgs/update.png)
 
 ### Deletando uma Feira
 
 * URL: `http://localhost:8000/v1/fair/{id}/`
 * Método: `DELETE`
 
-(.data/imgs/delete.png)
+![Screenshot](.data/imgs/delete.png)
