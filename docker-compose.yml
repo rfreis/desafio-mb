@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  backend:
+    build: .
+    entrypoint: ./.docker/entrypoint.sh
+    container_name: mb-backend
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    env_file: ./.env
+    depends_on:
+      - db
+    networks:
+      - mb-network
+
+  db:
+    image: postgres:11.5-alpine
+    container_name: mb-db
+    tty: true
+    volumes:
+      - ../.data/.pgdata-backend:/var/lib/postgresql/data
+    env_file: ./.env
+    ports:
+      - 5435:5432
+    networks:
+      - mb-network
+
+networks:
+  mb-network:
+    driver: bridge
