@@ -1,5 +1,3 @@
-# Avaliação de conhecimentos - Mercado Bitcoin
-
 ## Proposta
 
 Desenvolver uma API que exponha os dados disponíveis em [1] utilizando uma
